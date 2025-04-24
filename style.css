@@ -1,0 +1,189 @@
+/* === Universal Selector === */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* === CSS Variables with Fallback === */
+  :root {
+    --main-bg: hsl(210, 60%, 98%);
+    --accent-color: orange;
+    --fallback-color: #fafafa;
+  }
+  
+  body {
+    background-color: var(--main-bg, var(--fallback-color));
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* === Typography & Text === */
+  h1, h2, h3 {
+    color: rgb(30, 60, 120);
+    text-align: center;
+  }
+  
+  p:hover {
+    background-color: color-mix(in srgb, lightblue 50%, white 50%);
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  /* === Layout: Flexbox === */
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: auto;
+    width: 90%;
+  }
+  
+  section {
+    flex: 1 1 45%;
+    min-width: 320px;
+  }
+  
+  /* === Layout: Grid === */
+  #form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  /* === Colors (all types) === */
+  nav {
+    background-color: #f0f0f0; /* hex */
+  }
+  
+  button:active {
+    background-color: rgba(255, 99, 71, 0.6); /* rgba */
+  }
+  
+  h2 {
+    background-color: hsl(200, 100%, 95%); /* hsl */
+  }
+  
+  section:has(audio) {
+    background-color: color(display-p3 1 0.5 0.3); /* wide-gamut color */
+  }
+  
+  /* === Box Model === */
+  
+  /* Longhand margin */
+  header {
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+  }
+  
+  /* Shorthand margin */
+  section {
+    margin: 1rem 2rem 1rem 2rem;
+  }
+  
+  /* Auto margin */
+  img {
+    display: block;
+    margin: auto;
+  }
+  
+  /* Longhand padding */
+  fieldset {
+    padding-top: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  /* Shorthand padding */
+  section {
+    padding: 1rem;
+  }
+  
+  /* Border styles */
+  figure {
+    border-style: dashed;
+    border-color: #999;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+  /* === Display Values === */
+  img {
+    display: inline-block;
+  }
+  
+  nav, footer {
+    display: block;
+  }
+  
+  /* === Sizing === */
+  audio, video {
+    height: auto;
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+  }
+  
+  /* === Positioning === */
+  header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+  }
+  
+  nav {
+    position: relative;
+  }
+  
+  /* === Attribute Selector === */
+  input[type="text"] {
+    background-color: #eef;
+  }
+  
+  /* === Selector List === */
+  h1, h2 {
+    font-weight: bold;
+  }
+  
+  /* === Combined Selector === */
+  p.highlight {
+    color: darkred;
+  }
+  
+  /* === Combinators === */
+  section > h2 {
+    font-style: italic;
+  }
+  
+  section h3 {
+    color: darkblue;
+  }
+  
+  h2 + ul {
+    background-color: #f9f9f9;
+  }
+  
+  h3 ~ p {
+    font-size: 0.95rem;
+  }
+  
+  /* === Responsiveness === */
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+    }
+    #form {
+      grid-template-columns: 1fr;
+    }
+  }
